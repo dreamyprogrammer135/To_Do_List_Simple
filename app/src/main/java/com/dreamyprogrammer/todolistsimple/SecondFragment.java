@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
@@ -27,11 +28,14 @@ public class SecondFragment extends Fragment {
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        Toolbar toolbar = getActivity().findViewById(R.id.toolbar);
+        toolbar.setTitle(R.string.app_name2);
+
         FloatingActionButton myFab = getActivity().findViewById(R.id.fab);
         myFab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Second Fragment", Snackbar.LENGTH_LONG)
+                Snackbar.make(view, "222222", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
         });
